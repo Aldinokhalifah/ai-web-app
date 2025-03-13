@@ -115,8 +115,8 @@ export default function Chat(): JSX.Element {
           key={index}
           className={`mb-4 p-3 ${
             message.role === "user"
-            ? "bg-blue-100 ml-auto max-w-[75%] p-4 rounded-2xl"
-            : "bg-gray-100 mr-auto max-w-[75%] rounded-lg"
+            ? "bg-blue-100 ml-auto max-w-[75%] p-4 rounded-2xl text-black"
+            : "bg-gray-100 mr-auto max-w-[75%] rounded-lg text-black"
           }`}
           >
           <p className="text-sm font-semibold mb-1">
@@ -128,7 +128,7 @@ export default function Chat(): JSX.Element {
         {isLoading && (
           <div className="bg-gray-100 rounded-lg p-3 mr-auto max-w-[75%]">
           <p className="text-sm font-semibold mb-1">AI</p>
-          <p className="animate-pulse">Sedang mengetik...</p>
+          <p className="animate-pulse text-gray-500">Sedang mengetik...</p>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -140,7 +140,7 @@ export default function Chat(): JSX.Element {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ketik pesan Anda di sini..."
-          className="flex-1 p-2 border-2 border-gray-300 rounded-xl"
+          className="flex-1 p-2 border-2 border-gray-300 rounded-xl text-black dark:text-white"
           disabled={isLoading}
         />
         {input.length > 0 && (
