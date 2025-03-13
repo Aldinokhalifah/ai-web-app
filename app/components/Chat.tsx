@@ -122,13 +122,13 @@ export default function Chat(): JSX.Element {
           <p className="text-sm font-semibold mb-1">
             {message.role === "user" ? "Anda" : "AI"}
           </p>
-          <p className="whitespace-pre-wrap">{message.content}</p>
+          <p className="whitespace-pre-wrap text-black">{message.content}</p>
           </div>
         ))}
         {isLoading && (
           <div className="bg-gray-100 rounded-lg p-3 mr-auto max-w-[75%]">
           <p className="text-sm font-semibold mb-1">AI</p>
-          <p className="animate-pulse text-gray-500">Sedang mengetik...</p>
+          <p className="animate-pulse text-black">Sedang mengetik...</p>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -140,7 +140,7 @@ export default function Chat(): JSX.Element {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ketik pesan Anda di sini..."
-          className="flex-1 p-2 border-2 border-gray-300 rounded-xl text-black dark:text-white"
+          className="flex-1 p-2 border-2 border-gray-300 rounded-xl text-black"
           disabled={isLoading}
         />
         {input.length > 0 && (
